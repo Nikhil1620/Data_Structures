@@ -10,7 +10,7 @@ struct node
 
 typedef struct node NODE;
 typedef struct node * PNODE;
-typedef struct node ** PPNODE;\
+typedef struct node ** PPNODE;
 
 void InserFirst(PPNODE first, int no)
 {
@@ -103,15 +103,15 @@ void DeleteFirst(PPNODE first)
     }
 }
 
-void DeleteLast(PNODE first)
+void DeleteLast(PPNODE first)
 {
     PNODE temp = NULL;
 
-    if(*first == NULL)                //Case 1
+    if((*first) == NULL)                //Case 1
     {
         return;
     }
-    else if(*first -> next == NULL)   //Case 2
+    else if((*first) -> next == NULL)   //Case 2
     {
         free(*first);
         (*first) = NULL;
@@ -178,4 +178,5 @@ int main()
     printf("\n");
 
     return 0;
+
 }
